@@ -1,5 +1,10 @@
 dj-database-url==0.4.1
 Django==1.10.4
 gunicorn==19.6.0
+oauthlib==2.0.2
 psycopg2==2.6.2
+requests==2.14.2
+requests-oauthlib==0.8.0
+six==1.10.0
+tweepy==3.5.0
 whitenoise==3.2
