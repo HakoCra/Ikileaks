@@ -3,7 +3,6 @@ from django.contrib.auth import authenticate, login
 from django.views.generic.edit import CreateView
 
 from django.conf import settings
-from .forms import IkiliForm
 from .models import IkiliCommitter, Ikili
 import tweepy
 
@@ -19,10 +18,8 @@ def index(request):
             ikili_list.append({'html': html})
         except KeyError:
             pass
-    form = IkiliForm()
     return render(request, template_name='ikileaks_app/index.html', context={
         'ikili_list': ikili_list,
-        'ikili_form': form,
     })
 
 
