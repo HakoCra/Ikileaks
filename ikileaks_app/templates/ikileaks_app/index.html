@@ -5,11 +5,9 @@
   {{ ikili.html|safe }}<br>
 {% endfor %}
 
-<footer>
-  {% if user.is_authenticated %}
-    {{ user }}
-  {% else %}
-    <a href="{% url 'ikileaks_app:login' %}">login</a>
-  {% endif %}
-</footer>
+  <footer class="footer">
+    <div class="container">
+      <p class="text-muted">Footer.</p>
+    </div>
+  </footer>
 {% endblock %}
