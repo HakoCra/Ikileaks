@@ -20,8 +20,11 @@
                 <a href="{% url 'ikileaks_app:login' %}">Login or Signup</a>
               {% endif %}
             </li>
+            <li>
+              <a href="{% url 'ikileaks_app:ikili_create' %}">Submit</a>
+            </li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
   </nav>
 {% block content %}{% endblock %}

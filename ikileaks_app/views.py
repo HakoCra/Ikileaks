@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.views.generic.edit import CreateView
 
 from django.conf import settings
 from .forms import IkiliForm
-from .models import IkiliCommitter
+from .models import IkiliCommitter, Ikili
 import tweepy
 
 from .models import Ikili
@@ -25,10 +26,11 @@ def index(request):
     })
 
 
-def new_ikili(request):
-    ikili = IkiliForm(request.POST)
-    ikili.save()
-    return redirect('/')
+class IkiliCreate(CreateView):
+    model = Ikili
+    fields = ['tweet_id']
+    template_name = 'ikileaks_app/ikili_create.html'
+    success_url = '/'
 
 
 def twitter_login(request):
