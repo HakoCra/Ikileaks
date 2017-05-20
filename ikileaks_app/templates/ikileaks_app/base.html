@@ -8,9 +8,18 @@
 <body>
   <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
     <div class="container">
+
         <div class="navbar-header">
           <a class="navbar-brand" href="{% url 'ikileaks_app:index' %}">Ikileaks</a>
+          <ul class="nav navbar-nav">
+            <li><a href="#">Ikilis</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Abouts</a></li>
+            <li><a href="#">Partners</a></li>
+          </ul>
         </div>
+
+
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li>
@@ -21,11 +30,15 @@
               {% endif %}
             </li>
             <li>
+              <a href="#">Donate</a>
+            </li>
+            <li>
               <a href="{% url 'ikileaks_app:ikili_create' %}">Submit</a>
             </li>
           </ul>
         </div>
       </div>
+
   </nav>
 {% block content %}{% endblock %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
