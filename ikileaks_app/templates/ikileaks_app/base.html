@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<html>
+<head>
+  <title>{% block title %}{% endblock %} | Ikileaks</title>
+<link href="{% static 'ikileaks_app/bootstrap-3.3.7-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+    <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{% url 'ikileaks_app:index' %}">Ikileaks</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              {% if user.is_authenticated %}
+                <a href="{% url 'ikileaks_app:login' %}">{{ user.twitter_id }}</a>
+              {% else %}
+                <a href="{% url 'ikileaks_app:login' %}">Login or Signup</a>
+              {% endif %}
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+  </nav>
+{% block content %}{% endblock %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="{% static 'ikileaks_app/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

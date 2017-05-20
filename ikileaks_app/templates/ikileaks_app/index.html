@@ -1,10 +1,10 @@
+{% extends 'ikileaks_app/base.html' %}
+{% block content %}
 <form action="{% url 'ikileaks_app:new_ikili' %}" method="post">
   {% csrf_token %}
   {{ ikili_form }}
   <input type="submit">
 </form>
-
-
 
 {% for ikili in ikili_list %}
   {{ ikili.html|safe }}<br>
@@ -17,3 +17,4 @@
     <a href="{% url 'ikileaks_app:login' %}">login</a>
   {% endif %}
 </footer>
+{% endblock %}
